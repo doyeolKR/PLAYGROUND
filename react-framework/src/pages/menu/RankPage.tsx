@@ -45,7 +45,7 @@ export default function RankPage() {
 
   useEffect(() => {
     if (myTeamList.data != null && myTeamList.data[myTeamIndex] != undefined) {
-      setMyteamId(myTeamList.data[myTeamIndex]?.team?.teamId)
+      setMyteamId(myTeamList?.data[myTeamIndex]?.team?.teamId)
     }
   }, [myTeamList.isSuccess, myTeamIndex])
 
@@ -63,7 +63,7 @@ export default function RankPage() {
       {tabIndex == 1 && teamRankIndex == 0 &&
         <div className="w-[calc(100%-5px)] h-167 mt-49 flex mr-5 ml-5">
           {teamList.isSuccess &&
-            teamList.data.map((item: teamRanking, index: number) => index <= 2 && (
+            teamList?.data?.map((item: teamRanking, index: number) => index <= 2 && (
               <div className="w-full h-full mr-5" onClick={() => { setTeamRankIndex(index + 1); setTeamInfo(item); }} key={index}>
                 <TopRank
                   teamRanking={item}
@@ -86,7 +86,7 @@ export default function RankPage() {
           onActiveIndexChange={(e) => { setMyTeamIndex(e.activeIndex); console.log(e.activeIndex) }}
         >
           {myTeamList.data && myTeamInfo.data &&
-            myTeamList.data.map((item: team, index: number) => (
+            myTeamList?.data?.map((item: team, index: number) => (
               <SwiperSlide key={index}>
                 <div className="w-full h-167 ml-[-10px]">
                   <MyTeamInfo rank={myTeamInfo.data.myTeamRank} teamRanking={item} isMyTeam={true} />
@@ -106,7 +106,7 @@ export default function RankPage() {
           {sortType === 'Rating' ? <div className="w-57 h-full flex items-center justify-center text-12 bg-gray-600">Rating</div> : <div className="w-57 h-full flex items-center justify-center text-12" onClick={() => setSortType('Rating')}>Rating</div>}
         </div>
         {tabIndex == 1 && teamList.data &&
-          teamList.data.map((item: teamRanking, index: number) => (
+          teamList?.data?.map((item: teamRanking, index: number) => (
             <div onClick={() => { setTeamRankIndex(index + 1); setTeamInfo(item); }} key={index}>
               <RankInfo
                 teamRanking={item}
