@@ -41,8 +41,10 @@ services:
     #   context: ./spring-framework/user-service
     image: itmagician/ssafy-b309:user-service
     container_name: user-service
+    environment:
+      - server.port=9002
     ports:
-      - "9002:8080"
+      - "9002:9002"
     networks:
       - playground-broadcast-network
 
@@ -61,8 +63,10 @@ services:
     #   context: ./spring-framework/fcm-service
     image: itmagician/ssafy-b309:notify-service
     container_name: notify-service
+    environment:
+      - server.port=9004
     ports:
-      - "9004:8080"
+      - "9004:9004"
     networks:
       - playground-broadcast-network
     # depends_on:

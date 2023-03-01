@@ -20,6 +20,11 @@ import java.util.List;
 public class MatchController {
     private MatchService matchService;
 
+    @GetMapping("/hello")
+    public String hello() {
+        return "hello";
+    }
+
     @ApiOperation(value = "팀 경기 필터 검색", notes = "필터 조건(날짜(matchDate), 지역(lat, lng), 반경(distance), 최소 시작시간(minStartTime), 최대 시작시간(maxStartTime), 스포츠 종류(sports), 게임 타입(gameType), 정렬조건(sort - tierLow, tierHigh, distance))에 맞는 운동 모임을 검색해 반환한다", response = List.class)
     @GetMapping
     public ResponseEntity<?> listByFilter(String matchDate, Double lat, Double lng, int distance, String minStartTime, String maxStartTime, String sports, String gameType, String sort) {

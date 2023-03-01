@@ -39,7 +39,7 @@ public class TeamController {
 
         if(map != null) {
             //알림 서버로 보내기
-            URL url = new URL ("https://i8b309.p.ssafy.io/notify/send/token-list");
+            URL url = new URL ("https://www.b309-playground.com/notify/send/token-list");
             //HttpURLConnection 객체를 생성해 openConnection 메소드로 url 연결
             HttpURLConnection httpConn = (HttpURLConnection) url.openConnection();
             //전송 방식 (POST)

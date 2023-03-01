@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.Map;
 
-@FeignClient(name = "chat", url = "https://i8b309.p.ssafy.io/chat")
+@FeignClient(name = "chat", url = "https://www.b309-playground.com/chat")
 public interface ChattingServiceClient {
 
     @PostMapping("/GatheringChatRoom")
