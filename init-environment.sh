@@ -45,3 +45,6 @@ sudo echo "#bind 0.0.0.0" >> /etc/redis/redis.conf
 sudo echo "maxmemory 1g" >> /etc/redis/redis.conf
 sudo echo "maxmemory-policy allkeys-lru" >> /etc/redis/redis.conf
 sudo systemctl restart redis
+
+echo ""
+echo "done."
