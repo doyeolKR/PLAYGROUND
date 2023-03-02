@@ -28,10 +28,18 @@ sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plug
 
 sudo docker run hello-world
 
-docker run --name redis -d --restart=always -p 6379:6379 redis
+#docker run --name redis -d --restart=always -p 6379:6379 redis
 docker run --name service-registry -d --restart=always -p 8761:8761 itmagician/ssafy-b309:service-registry
 
 echo "installing 'docker-compose'"
 sudo apt install -y docker-compose
 
 # 빌드 환경은 수동으로 설치해. (npm 18.x와 openjdk-17-jdk 패키지 설치, JAVA_HOME 설정)
+
+echo "installing redis"
+sudo apt install -y redis
+
+sudo echo "requirepass b309309" >> /etc/redis/redis.conf
+sudo echo "#bind 0.0.0.0" >> /etc/redis/redis.conf
+sudo echo "maxmemory 1g" >> /etc/redis/redis.conf
+sudo echo "maxmemory-policy allkeys-lru" >> /etc/redis/redis.conf
