@@ -44,3 +44,4 @@ echo "please allow external access by writing 'bind 0.0.0.0' on /etc/redis/redis
 sudo echo "#bind 0.0.0.0" >> /etc/redis/redis.conf
 sudo echo "maxmemory 1g" >> /etc/redis/redis.conf
 sudo echo "maxmemory-policy allkeys-lru" >> /etc/redis/redis.conf
+sudo systemctl restart redis
