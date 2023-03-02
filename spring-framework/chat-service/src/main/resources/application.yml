@@ -19,6 +19,7 @@ spring:
   redis:
     host: www.b309-playground.com # i8b309.p.ssafy.io # localhost
     port: 6379
+    password: b309309
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://ssafy-project.mysql.database.azure.com:3306/playground?serverTimezone=UTC&characterEncoding=UTF-8&useSSL=true

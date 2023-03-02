@@ -114,6 +114,7 @@ spring:
     redis:
       host: www.b309-playground.com  # localhost
       port: 6379
+      password: b309309
 
 oauth2:
   client:
