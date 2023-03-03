@@ -55,7 +55,7 @@ public class RedisConfig {
         genericObjectPoolConfig.setMaxIdle(maxIdle);
         genericObjectPoolConfig.setMaxTotal(maxTotal);
         genericObjectPoolConfig.setMinIdle(minIdle);
-//        genericObjectPoolConfig.setTimeBetweenEvictionRunsMillis(timeBetweenEvictionRuns);
+        genericObjectPoolConfig.setTimeBetweenEvictionRunsMillis(timeBetweenEvictionRuns);
 
         LettuceClientConfiguration lettuceClientConfiguration =
                 LettucePoolingClientConfiguration.builder().poolConfig(genericObjectPoolConfig)
