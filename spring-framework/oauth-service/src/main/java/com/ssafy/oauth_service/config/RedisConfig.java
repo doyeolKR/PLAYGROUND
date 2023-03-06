@@ -52,16 +52,16 @@ public class RedisConfig {
         redisStandaloneConfiguration.setPort(port);
         redisStandaloneConfiguration.setPassword(password);
 
-        genericObjectPoolConfig.setMaxIdle(maxIdle);
-        genericObjectPoolConfig.setMaxTotal(maxTotal);
-        genericObjectPoolConfig.setMinIdle(minIdle);
-        genericObjectPoolConfig.setTimeBetweenEvictionRunsMillis(timeBetweenEvictionRuns);
+//        genericObjectPoolConfig.setMaxIdle(maxIdle);
+//        genericObjectPoolConfig.setMaxTotal(maxTotal);
+//        genericObjectPoolConfig.setMinIdle(minIdle);
+//        genericObjectPoolConfig.setTimeBetweenEvictionRunsMillis(timeBetweenEvictionRuns);
+//
+//        LettuceClientConfiguration lettuceClientConfiguration =
+//                LettucePoolingClientConfiguration.builder().poolConfig(genericObjectPoolConfig)
+//                        .commandTimeout(Duration.ofSeconds(commandTimeout)).build();
 
-        LettuceClientConfiguration lettuceClientConfiguration =
-                LettucePoolingClientConfiguration.builder().poolConfig(genericObjectPoolConfig)
-                        .commandTimeout(Duration.ofSeconds(commandTimeout)).build();
-
-        return new LettuceConnectionFactory(redisStandaloneConfiguration, lettuceClientConfiguration);
+        return new LettuceConnectionFactory(redisStandaloneConfiguration/*, lettuceClientConfiguration*/);
     }
 
     @Bean

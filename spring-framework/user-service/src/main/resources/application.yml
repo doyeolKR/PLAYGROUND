@@ -14,7 +14,7 @@ eureka:
 
 spring:
   application:
-    name: user-service
+    name: USER-SERVICE
 
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
