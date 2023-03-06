@@ -40,8 +40,8 @@ echo "installing redis"
 sudo apt install -y redis
 
 sudo echo "requirepass b309309" >> /etc/redis/redis.conf
-echo "please allow external access by writing 'bind 0.0.0.0' on /etc/redis/redis.conf"
-sudo echo "#bind 0.0.0.0" >> /etc/redis/redis.conf
+echo "\033[31mplease allow external access by writing 'bind 0.0.0.0' on /etc/redis/redis.conf after finishing this script.\033[0m"
+sudo echo -e "#bind 0.0.0.0" >> /etc/redis/redis.conf
 sudo echo "maxmemory 1g" >> /etc/redis/redis.conf
 sudo echo "maxmemory-policy allkeys-lru" >> /etc/redis/redis.conf
 sudo systemctl restart redis

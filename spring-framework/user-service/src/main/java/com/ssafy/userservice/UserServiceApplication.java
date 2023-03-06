@@ -7,7 +7,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 
-@EnableWebMvc
+// @EnableWebMvc
 @EnableJpaAuditing // DB created, modify 시간 자동 입력
 @SpringBootApplication
 public class UserServiceApplication {

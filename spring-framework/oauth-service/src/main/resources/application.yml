@@ -1,17 +1,13 @@
-env:
-  server:
-    port: 8080
-
 server:
-  port: ${env.server.port}
+  port: 8080
 
 eureka:
   instance:
     hostname: www.b309-playground.com
 #    prefer-ip-address: true
-#    non-secure-port-enabled: false
-#    secure-port-enabled: true
-#    secure-port: ${env.server.port}
+    non-secure-port-enabled: false
+    secure-port-enabled: true
+#    secure-port: ${erver.port}
   client:
     fetch-registry: true
     register-with-eureka: true

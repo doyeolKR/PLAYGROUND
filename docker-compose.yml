@@ -18,7 +18,7 @@ services:
     image: itmagician/ssafy-b309:oauth2-service
     container_name: playground-oauth2-service
     environment:
-      - env.server.port=9001
+      - server.port=9001
     ports:
       - "9001:9001"
     networks:
@@ -30,7 +30,7 @@ services:
     image: itmagician/ssafy-b309:oauth2-service
     container_name: playground-oauth2-service2
     environment:
-      - env.server.port=9011
+      - server.port=9011
     ports:
       - "9011:9011"
     networks:

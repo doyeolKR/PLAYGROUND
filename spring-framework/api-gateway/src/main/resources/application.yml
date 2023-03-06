@@ -62,16 +62,16 @@ spring:
 
 
         - id: user-service
-          # uri: lb://USER-SERVICE
-          uri: https://www.b309-playground.com:9002
+          uri: lb://USER-SERVICE
+          # uri: https://www.b309-playground.com:9002
           predicates:
             - Path=/user/**, /file/**
 #          filters:
 #            - RewritePath=/oauth/(?<path>.*),/$\{path}
 
         - id: matching-service
-          uri: https://www.b309-playground.com:9003
-          # uri: lb://MATCHING-SERVICE
+          # uri: https://www.b309-playground.com:9003
+          uri: lb://MATCH-SERVICE
           order: 1
           predicates:
             - Path=/match/**, /matching/**, /mypage/**, /gathering/**, /live/**, /ranking/**, /team/**, , /token/**
@@ -84,20 +84,20 @@ spring:
             - RewritePath=/test/(?<path>.*),/$\{path}
 
         - id: notify-service
-          uri: https://www.b309-playground.com:9004
-          # uri: lb://NOTIFY-SERVICE
+          # uri: https://www.b309-playground.com:9004
+          uri: lb://NOTIFY-SERVICE
           predicates:
             - Path=/notify/**
 
         - id: chat-service
-          uri: https://www.b309-playground.com:9005
-          # uri: lb://CHAT-SERVICE
+          # uri: https://www.b309-playground.com:9005
+          uri: lb://CHAT-SERVICE
           predicates:
             - Path=/chat/**, /ws-stomp/**, /webjars/**
 
         - id: team_match-service
-          uri: https://www.b309-playground.com:9006
-          # uri: lb://TEAM-MATCHING-SERVICE
+          # uri: https://www.b309-playground.com:9006
+          uri: lb://TEAM-MATCHING-SERVICE
           predicates:
             - Path=/team/matching/**
 
