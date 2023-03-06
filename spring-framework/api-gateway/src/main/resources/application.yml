@@ -62,7 +62,7 @@ spring:
 
         - id: user-service
 #          uri: https://www.b309-playground.com:9002
-           uri: lb://USER-SERVICE
+          uri: lb://USER-SERVICE
 #          uri: http://localhost:9000
           predicates:
             - Path=/user/**, /file/**
@@ -85,7 +85,7 @@ spring:
 
         - id: notify-service
 #          uri: https://www.b309-playground.com:9004
-           uri: lb://NOTIFY-SERVICE
+          uri: lb://NOTIFY-SERVICE
           predicates:
             - Path=/notify/**
 
