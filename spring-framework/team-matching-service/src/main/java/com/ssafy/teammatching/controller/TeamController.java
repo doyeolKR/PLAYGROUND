@@ -63,14 +63,18 @@ public class TeamController {
 
             //멤버의 토큰 가져오기 -> 토큰 리스트에 넣기
             MemberDetail memberDetail1 = memberService.getMemberDetail(matchingResult1.getMemberId());
-            String token1 = memberDetail1.getWebFcmToken();
+            String web_token1 = memberDetail1.getWebFcmToken();
 
             MemberDetail memberDetail2 = memberService.getMemberDetail(matchingResult2.getMemberId());
-            String token2 = memberDetail2.getWebFcmToken();
+            String web_token2 = memberDetail2.getWebFcmToken();
 
             List<String> token_list = new ArrayList<>();
-            token_list.add(token1);
-            token_list.add(token2);
+            token_list.add(web_token1);
+            token_list.add(web_token2);
+            if (memberDetail1.getMobileFcmToken() != null && !memberDetail1.getMobileFcmToken().isEmpty())
+                token_list.add(memberDetail1.getMobileFcmToken());
+            if (memberDetail2.getMobileFcmToken() != null && !memberDetail2.getMobileFcmToken().isEmpty())
+                token_list.add(memberDetail2.getMobileFcmToken());
 
             //data에 매칭 정보 넣기
             Gson gson = new Gson();
