@@ -68,10 +68,19 @@ export default function TeamMatchNotificationModal() {
   });
 
   window.fcmForegroundOnFlutterApp = (data: any) => {
+    console.log("window.fcmForegroundOnFlutterApp : ", data)
     data = JSON.parse(data)
+    console.log("window.fcmForegroundOnFlutterApp : ", data)
 
-    const matchData = data?.team1;
-    const matchData2 = data?.team2;
+    // const matchData = data?.team1;
+    // const matchData2 = data?.team2;
+    const matchData = data[Object.keys(data)[0]];
+    const matchData2 = data[Object.keys(data)[1]];
+
+
+    console.log("window.fcmForegroundOnFlutterApp ", userId, matchData)
+    console.log("window.fcmForegroundOnFlutterApp ", userId, matchData2)
+
     if (matchData.memberId === userId) {
       setMatchId(matchData.matchId);
       setMemberId(matchData.memberId);

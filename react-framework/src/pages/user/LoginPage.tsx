@@ -14,7 +14,7 @@ export default function LoginPage() {
 
         window.Kakao.Auth.authorize({
             // redirectUri: 'https://developers.kakao.com/tool/demo/oauth',
-            redirectUri: window.isFluttApp ? KAKAO_LOGIN_TEST_SERVER_URL + "/oauth2/app/login/kakao" : KAKAO_LOGIN_TEST_SERVER_URL + "/oauth2/web/login/kakao",
+            redirectUri: window.isFluttApp ? KAKAO_LOGIN_TEST_SERVER_URL + "/oauth2/app/login" : KAKAO_LOGIN_TEST_SERVER_URL + "/oauth2/web/login",
         });
     }
 
